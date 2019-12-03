@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ext/java_card_kit-3_0_3/lib/api_classic.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ext/java_card_kit-3_0_3/lib/api_connected.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ext/java_card_kit-3_0_3/lib/tools.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ant-javacard">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ext/ant-javacard.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

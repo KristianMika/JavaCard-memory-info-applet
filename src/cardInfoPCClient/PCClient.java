@@ -81,12 +81,15 @@ public class PCClient {
         try {
             terminal = factory.terminals().list().get(0);
         } catch (CardException e) {
-            throw new InvalidParameterException("[ERROR] No cards found");
+            throw new InvalidParameterException("[ERROR] No terminals found");
         }
+
+        Card card = terminal.connect("*");
+
         if (debug) {
             System.out.println("[OK] Connection successful");
         }
-        Card card = terminal.connect("*");
+
         System.out.println("[->] Selecting GetCardInfo applet...");
 
         CardChannel channel = card.getBasicChannel();

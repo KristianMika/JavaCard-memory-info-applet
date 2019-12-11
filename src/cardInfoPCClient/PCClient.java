@@ -1,10 +1,13 @@
 package cardInfoPCClient;
 
+import apduResolver.Resolver;
 import javacard.framework.ISO7816;
 import javacard.framework.Util;
 
 import javax.smartcardio.*;
 import java.security.InvalidParameterException;
+
+
 
 /**
  * Represents a PC client for acquiring card memory information
@@ -116,11 +119,12 @@ public class PCClient {
             for (byte apduByte : cmd.getBytes()) {
                 System.out.print(String.format("%02x ", apduByte));
             }
+            System.out.println();
         }
         ResponseAPDU response = channel.transmit(cmd);
         assert checkResponse(response);
         if (debug) {
-            System.out.print("\n<- ");
+            System.out.print("<- ");
             for (byte apduByte : response.getBytes()) {
                 System.out.print(String.format("%02x ", apduByte));
             }
@@ -137,7 +141,8 @@ public class PCClient {
      */
     public static boolean checkResponse(ResponseAPDU response) {
         if (response.getSW() != (ISO7816.SW_NO_ERROR & 0xffff)) {
-            System.err.println(String.format("[ERROR] Received error status: %02X.", response.getSW()));
+            System.err.println(String.format("[ERROR] Received error status: 0x%02X - %s", response.getSW(),
+                    Resolver.resolveResponseStatus(response.getSW())));
             return false;
         }
         return true;

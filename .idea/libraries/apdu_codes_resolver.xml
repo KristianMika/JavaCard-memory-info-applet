@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="apdu_codes_resolver">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ext/apdu_codes_resolver.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -51,7 +51,7 @@ public class GetCardInfo extends Applet {
             }
 
         } else {
-            ISOException.throwIt(ISO7816.SW_INS_NOT_SUPPORTED);
+            ISOException.throwIt(ISO7816.SW_CLA_NOT_SUPPORTED);
         }
     }
 
